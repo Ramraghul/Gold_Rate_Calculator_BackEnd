@@ -15,7 +15,7 @@ const PASSWORD = process.env.PASSWORD
 
 //Middleware;
 API.use(express.json());
-API.use(cors({ origin: "http://localhost:3000"}))
+API.use(cors({ origin: "https://gold-rate-calculator-1.netlify.app"}))
 
 //Conform to Working API;
 API.get("/", function (req, res) {
