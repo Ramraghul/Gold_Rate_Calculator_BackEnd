@@ -13,9 +13,6 @@ var nodemailer = require('nodemailer');
 const FROM = process.env.FROM;
 const PASSWORD = process.env.PASSWORD
 
-// Gold_Data
-// uvdolryesnixdjft
-
 //Middleware;
 API.use(express.json());
 API.use(cors({ origin: "http://localhost:3000"}))
