@@ -49,13 +49,14 @@ API.post("/Login", async function (req, res) {
 
         //User Verification;
         let user = await db.collection("Users").findOne({ Email: req.body.Email });
+        let Name = user.Username
         if (user) {
             if (user) {
                 let compare = await bcrypt.compare(req.body.Password, user.Password);
                 console.log(compare);
                 if (compare) {
                     let token = jwt.sign({ _id: user._id }, process.env.SEC, { expiresIn: '5m' });
-                    res.json({ token });
+                    res.json({token,Name});
                 } else {
                     res.json({ Message: 'Email or Password Wrong' });
                 }
@@ -184,4 +185,4 @@ API.get('/Rate_card',async function(req,res){
 })
 
 //PORT Listen;
-API.listen(process.env.PORT||7000);
+API.listen(process.env.PORT || 7000);
