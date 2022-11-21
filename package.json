@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Gold_Rate_Database",
   "main": "Server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node Server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
